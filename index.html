@@ -7,28 +7,26 @@
 	<title>Carousel</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="assets/style.css">
-	<script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
-	<script src="assets/script.js" defer></script>
+	
+	
 </head>
 <body>
 	<div class="container">
-		<div class="carousel">
-			
-			<div class="highlighted">
-				<img v-for="(image, index) in images"
-				:key ="image"
-				:src ="image",
+		<div id="carousel">
+			<div id="highlighted">
+				<img v-for="(image, index) in arrImages"
+				:key ="index"
+				:src ='image.image'
 				:alt =""
 				:class="active: index == activeIndex"
-			>
-
+				>
 			</div>
 
 			<!-- div con le miniature -->
 			<div class="thumbs">
 				<div class="controls">
-					<i class="bi bi-arrow-up-circle-fill btn btn-prev"></i>
-					<i class="bi bi-arrow-down-circle-fill btn btn-next"></i>
+					<!-- <i class="bi bi-arrow-up-circle-fill btn btn-prev"></i>
+					<i class="bi bi-arrow-down-circle-fill btn btn-next"></i> -->
 				</div>
 				<!-- <img src="img/01.jpg" alt="" class="active">
 				<img src="img/02.jpg" alt="">
@@ -39,7 +37,9 @@
 		</div>
 	</div>
 
-	
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="assets/script.js" ></script>
 </body>
+
 </html>
 
