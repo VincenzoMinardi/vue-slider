@@ -13,32 +13,30 @@
 <body>
 	<div class="container">
 		<div class="carousel">
-			<div v-for="(slide, index) in arrImages" class="highlighted">
+			<div v-for="(slide, index) in arrImages" class="highlighted ">
 				<img 
 				:key ="index"
 				:src ="slide.image"
 				:alt ="slide.title"
 				:class ="{active: index == activeIndex}"
 				>
-				<h1 :class="">{{slide.title}}</h1>
-				<p  :class>{{slide.text}}</p>
-				
-				
+				<h1 class="title active">{{slide.title}}</h1>
+				<p class="text active">{{slide.text}}</p>
 			</div>
 
 			<!-- div con le miniature -->
-			<div class="thumbs">
+			<div class="thumbs"  >
+				<img v-for="(miniSlide, index) in arrImages"
+				:src="miniSlide.image" 
+				:alt="miniSlide.title" 
+				:class="{active: index == activeIndex}"
+				>
 				<div class="controls">
-					<!-- <i class="bi bi-arrow-up-circle-fill btn btn-prev"></i>
-					<i class="bi bi-arrow-down-circle-fill btn btn-next"></i> -->
+					<i class="bi bi-arrow-up-circle-fill btn btn-prev"></i>
+					<i class="bi bi-arrow-down-circle-fill btn btn-next"></i>
 				</div>
-				<!-- <img src="img/01.jpg" alt="" class="active">
-				<img src="img/02.jpg" alt="">
-				<img src="img/03.jpg" alt="">
-				<img src="img/04.jpg" alt="">
-				<img src="img/05.jpg" alt=""> -->
+				
 			</div>
-		</div>
 	</div>
 
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
