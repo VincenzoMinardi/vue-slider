@@ -7,11 +7,22 @@
 	<title>Carousel</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="assets/style.css">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+	<script src="assets/script.js" defer></script>
 </head>
 <body>
 	<div class="container">
 		<div class="carousel">
-			<div class="highlighted">{{post}}</div>
+			
+			<div class="highlighted">
+				<img v-for="(image, index) in images"
+				:key ="image"
+				:src ="image",
+				:alt =""
+				:class="active: index == activeIndex"
+			>
+
+			</div>
 
 			<!-- div con le miniature -->
 			<div class="thumbs">
@@ -28,7 +39,7 @@
 		</div>
 	</div>
 
-	<script src="assets/script.js"></script>
+	
 </body>
 </html>
 
