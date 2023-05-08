@@ -45,7 +45,7 @@ const app = Vue.createApp({
         }
     }
 });
-app.mount('#carousel');
+app.mount('.carousel');
 
 
 

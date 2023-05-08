@@ -12,14 +12,18 @@
 </head>
 <body>
 	<div class="container">
-		<div id="carousel">
-			<div id="highlighted">
-				<img v-for="(image, index) in arrImages"
+		<div class="carousel">
+			<div v-for="(slide, index) in arrImages" class="highlighted">
+				<img 
 				:key ="index"
-				:src ='image.image'
-				:alt =""
-				:class="active: index == activeIndex"
+				:src ="slide.image"
+				:alt ="slide.title"
+				:class ="{active: index == activeIndex}"
 				>
+				<h1 :class="">{{slide.title}}</h1>
+				<p  :class>{{slide.text}}</p>
+				
+				
 			</div>
 
 			<!-- div con le miniature -->
